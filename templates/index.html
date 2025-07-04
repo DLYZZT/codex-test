@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Flask Vue Demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        #app {
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <el-container>
+        <el-header style="background-color:#409EFF;color:white;">
+            <h1>Vue + Element UI</h1>
+        </el-header>
+        <el-main>
+            <el-card>
+                <p>[[ message ]]</p>
+                <el-button type="primary" @click="changeMessage">Click me</el-button>
+            </el-card>
+        </el-main>
+    </el-container>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        delimiters: ['[[', ']]'],
+        data: {
+            message: 'Hello, Element UI!'
+        },
+        methods: {
+            changeMessage() {
+                this.message = 'Button clicked!';
+            }
+        }
+    });
+</script>
+</body>
+</html>
